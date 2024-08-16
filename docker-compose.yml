@@ -3,8 +3,10 @@ services:
     image: itzg/minecraft-server
     environment:
       EULA: "true"
+      MEMORY: 8G
       ENABLE_WHITELIST: true
-      WHITELIST: Merlin_x3,Vngus
+      WHITELIST: ${WHITELIST}
+      RCON_PASSWORD: ${RCON_PASSWORD}
       TYPE: "MODRINTH"
       MODRINTH_MODPACK: "Aged"
       MODRINTH_VERSION: "zhsvN65f"
