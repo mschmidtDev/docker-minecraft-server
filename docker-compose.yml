@@ -3,6 +3,8 @@ services:
     image: itzg/minecraft-server
     environment:
       EULA: "true"
+      ENABLE_WHITELIST: true
+      WHITELIST: Merlin_x3,Phil0xFF
       TYPE: "MODRINTH"
       MODRINTH_MODPACK: "Aged"
       MODRINTH_VERSION: "zhsvN65f"
