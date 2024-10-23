@@ -31,7 +31,6 @@ jobs:
           - java8-graalvm-ce
           - java8-openj9
           - java8-jdk
-          - java8-alpine
           - java11
         include:
         # JAVA 21:
@@ -75,10 +74,6 @@ jobs:
             baseImage: eclipse-temurin:8u312-b07-jre-focal
             platforms: linux/amd64,linux/arm/v7,linux/arm64
             mcVersion: 1.12.2
-          - variant: java8-alpine
-            baseImage: openjdk:8-jre-alpine3.9
-            platforms: linux/amd64
-            mcVersion: 1.12.2
           - variant: java8-graalvm-ce
             baseImage: ghcr.io/graalvm/graalvm-ce:java8
             platforms: linux/amd64
@@ -98,7 +93,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v4.2.1
         with:
           # for build-files step
           fetch-depth: 0
@@ -133,13 +128,13 @@ jobs:
             org.opencontainers.image.authors=Geoff Bourne <itzgeoff@gmail.com>
 
       - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v3.6.1
+        uses: docker/setup-buildx-action@v3.7.1
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3.2.0
 
       - name: Build for test
-        uses: docker/build-push-action@v6.6.1
+        uses: docker/build-push-action@v6.9.0
         with:
           platforms: linux/amd64
           tags: ${{ env.IMAGE_TO_TEST }}
@@ -177,7 +172,7 @@ jobs:
           password: ${{ github.token }}
 
       - name: Build and push
-        uses: docker/build-push-action@v6.6.1
+        uses: docker/build-push-action@v6.9.0
         if: github.actor == github.repository_owner
         with:
           platforms: ${{ matrix.platforms }}

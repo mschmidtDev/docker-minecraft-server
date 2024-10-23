@@ -10,7 +10,7 @@ handleDebugMode
 : "${PAPER_CHANNEL:=default}"
 : "${PAPER_DOWNLOAD_URL:=}"
 : "${PAPER_CUSTOM_JAR:=}"
-: "${PAPER_CONFIG_DEFAULTS_REPO:=https://raw.githubusercontent.com/dayyeeet/minecraft-default-configs/main}"
+: "${PAPER_CONFIG_DEFAULTS_REPO:=${PAPER_CONFIG_REPO:=https://raw.githubusercontent.com/dayyeeet/minecraft-default-configs/main}}"
 
 resultsFile=/data/.paper.env
 if [[ $PAPER_CUSTOM_JAR ]]; then
@@ -20,15 +20,10 @@ elif [[ $PAPER_DOWNLOAD_URL ]]; then
     --output-directory=/data \
     --results-file="$resultsFile" \
     --url="$PAPER_DOWNLOAD_URL"; then
-      log "ERROR: failed to download from custom PaperMC URL"
+      logError "Failed to download from custom PaperMC URL"
       exit 1
   fi
-  # grab SERVER and export it
-  set -a
-  # shellcheck disable=SC1090
-  source "${resultsFile}"
-  set +a
-
+  applyResultsFile ${resultsFile}
 else
   args=(
     --output-directory=/data
@@ -41,15 +36,10 @@ else
     args+=(--build="$PAPER_BUILD")
   fi
   if ! mc-image-helper install-paper "${args[@]}"; then
-      log "ERROR: failed to download $PAPER_PROJECT"
+      logError "Failed to download $PAPER_PROJECT"
       exit 1
   fi
-  # grab SERVER and export it
-  set -a
-  # shellcheck disable=SC1090
-  source "${resultsFile}"
-  set +a
-
+  applyResultsFile ${resultsFile}
 fi
 
 # Download default configs to allow for consistent patching
