@@ -8,8 +8,8 @@ services:
       WHITELIST: ${WHITELIST}
       RCON_PASSWORD: ${RCON_PASSWORD}
       TYPE: "MODRINTH"
-      MODRINTH_MODPACK: "Aged"
-      MODRINTH_VERSION: "zhsvN65f"
+      MODRINTH_MODPACK: "better-mc-fabric-bmc2"
+      MODRINTH_VERSION: "SH0rTaJc"
     ports:
       - "25565:25565"
     volumes:
