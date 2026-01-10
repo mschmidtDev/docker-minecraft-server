@@ -3,15 +3,15 @@ services:
     image: itzg/minecraft-server
     environment:
       MEMORY: "12G"
-      TYPE: "fabric"
+      TYPE: "MODRINTH"
       INIT_MEMORY: "12G"
       MAX_MEMORY: "14G"
       EULA: "true"
       VERSION: "1.20.1"
-      MODRINTH_PROJECTS: fabric-api
+      #MODRINTH_PROJECTS: fabric-api
       MODRINTH_MODPACKS: homestead
       MODRINTH_VERSION: tGqYeW2p
-      MODRINTH_LOADER: fabric
+      #MODRINTH_LOADER: fabric
       ENABLE_WHITELIST: true
       WHITELIST: ${WHITELIST}
       RCON_PASSWORD: ${RCON_PASSWORD}
@@ -27,6 +27,7 @@ services:
 volumes:
 
   data: {}
+
 
 
 
