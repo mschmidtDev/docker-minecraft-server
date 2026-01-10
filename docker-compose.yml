@@ -3,6 +3,10 @@ services:
     image: itzg/minecraft-server
     environment:
       EULA: "true"
+      MODRINTH_PROJECTS: fabric:6HvKwSky
+      ENABLE_WHITELIST: true
+      WHITELIST: ${WHITELIST}
+      RCON_PASSWORD: ${RCON_PASSWORD}
     ports:
       - "25565:25565"
     volumes:
@@ -11,4 +15,5 @@ services:
     tty: true
     restart: unless-stopped
 volumes:
+
   data: {}
