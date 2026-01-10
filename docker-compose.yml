@@ -1,8 +1,8 @@
 services:
   mc:
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server:java21
     environment:
-      JAVA_VERSION: "21"
+      #JAVA_VERSION: "21"
       MEMORY: "12G"
       TYPE: "MODRINTH"
       INIT_MEMORY: "12G"
@@ -28,6 +28,7 @@ services:
 volumes:
 
   data: {}
+
 
 
 
