@@ -3,6 +3,7 @@ services:
     image: itzg/minecraft-server
     environment:
       MEMORY: "12G"
+      TYPE: "fabric"
       INIT_MEMORY: "12G"
       MAX_MEMORY: "14G"
       EULA: "true"
@@ -25,6 +26,7 @@ services:
 volumes:
 
   data: {}
+
 
 
 
