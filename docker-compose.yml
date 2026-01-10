@@ -4,7 +4,7 @@ services:
     environment:
       EULA: "true"
       MODRINTH_MODPACKS: 6HvKwSky
-      VERSION: tGqYeW2p
+      MODRINTH_VERSION: tGqYeW2p
       ENABLE_WHITELIST: true
       WHITELIST: ${WHITELIST}
       RCON_PASSWORD: ${RCON_PASSWORD}
@@ -18,5 +18,6 @@ services:
 volumes:
 
   data: {}
+
 
 
