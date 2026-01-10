@@ -8,6 +8,7 @@ services:
       MAX_MEMORY: "14G"
       EULA: "true"
       VERSION: "1.20.1"
+      MODRINTH_PROJECTS: fabric-api
       MODRINTH_MODPACKS: 6HvKwSky
       MODRINTH_VERSION: tGqYeW2p
       MODRINTH_LOADER: fabric
@@ -26,6 +27,7 @@ services:
 volumes:
 
   data: {}
+
 
 
 
