@@ -10,7 +10,7 @@ services:
       #VERSION: "1.20.1"
       #MODRINTH_PROJECTS: fabric-api
       MODRINTH_MODPACK: homestead
-      #MODRINTH_VERSION: tGqYeW2p
+      MODRINTH_VERSION: tGqYeW2p
       #MODRINTH_LOADER: fabric
       ENABLE_WHITELIST: true
       WHITELIST: ${WHITELIST}
@@ -27,6 +27,7 @@ services:
 volumes:
 
   data: {}
+
 
 
 
