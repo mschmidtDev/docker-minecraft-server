@@ -13,12 +13,15 @@ services:
       - "25565:25565"
     volumes:
       - data:/data
+    env_file: 
+      - .env
     stdin_open: true
     tty: true
     restart: unless-stopped
 volumes:
 
   data: {}
+
 
 
 
