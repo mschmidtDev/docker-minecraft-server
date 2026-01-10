@@ -4,6 +4,7 @@ services:
     environment:
       #JAVA_VERSION: "21"
       MEMORY: "12G"
+      OPS: ${OPS}
       TYPE: "MODRINTH"
       INIT_MEMORY: "12G"
       MAX_MEMORY: "14G"
@@ -28,6 +29,7 @@ services:
 volumes:
 
   data: {}
+
 
 
 
