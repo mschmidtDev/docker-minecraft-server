@@ -13,8 +13,6 @@ services:
       #MODRINTH_VERSION: tGqYeW2p
       #MODRINTH_LOADER: fabric
       ENABLE_WHITELIST: true
-      MODRINTH_FORCE_INCLUDE_FILES: |
-        emi
       WHITELIST: ${WHITELIST}
       RCON_PASSWORD: ${RCON_PASSWORD}
     ports:
@@ -29,6 +27,7 @@ services:
 volumes:
 
   data: {}
+
 
 
 
