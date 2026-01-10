@@ -3,7 +3,7 @@ services:
     image: itzg/minecraft-server
     environment:
       EULA: "true"
-      MODRINTH_PROJECTS: fabric:6HvKwSky
+      MODRINTH_MODPACKS: 6HvKwSky
       ENABLE_WHITELIST: true
       WHITELIST: ${WHITELIST}
       RCON_PASSWORD: ${RCON_PASSWORD}
@@ -17,3 +17,4 @@ services:
 volumes:
 
   data: {}
+
