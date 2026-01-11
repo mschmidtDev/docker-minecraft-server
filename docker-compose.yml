@@ -3,7 +3,6 @@ services:
     image: itzg/minecraft-server:java21
     environment:
       #JAVA_VERSION: "21"
-      MEMORY: "12G"
       OPS: ${OPS}
       TYPE: "MODRINTH"
       INIT_MEMORY: "12G"
@@ -29,6 +28,7 @@ services:
 volumes:
 
   data: {}
+
 
 
 
